@@ -12,7 +12,10 @@
 
     <style>
         .main-container {
-            padding: 60px;
+            padding-left: 120px;
+            padding-right: 120px;
+            padding-top: 50px;
+            padding-bottom: 50px;
         }
     </style>
 
@@ -20,14 +23,14 @@
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">Тестовий блог</a>
+          <a class="navbar-brand" style="padding-left:120px; padding-right:60px" href="/">Тестовий блог</a>
         </div>
         <ul class="nav navbar-nav">
           <li><a href="/">Домашня сторінка</a></li>
-          <li><a href="/">Новини</a></li>
+          <li><a href="/news/index">Новини</a></li>
           <li><a href="/posts">Пости</a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" style="padding-right: 120px">
           <% if user_signed_in? %>
             <li class="navbar-brand"><span class="glyphicon glyphicon-user"></span> Вітаємо, <%= current_user.email %></a></li>
             <li class="a"><%= link_to 'Вихід', destroy_user_session_path, :method => :delete %></li>
@@ -44,7 +47,9 @@
   </head>
 
   <body>
+  <div class="container-fluid main-container">
     <%= yield %>
+  </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </body>
